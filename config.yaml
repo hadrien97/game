@@ -1,0 +1,21 @@
+cookie:
+  expiry_days: 30
+  key: some_signature_key
+  name: some_cookie_name
+credentials:
+  usernames:
+    flavien:
+      email: tralala@gmail.com
+      failed_login_attempts: 0
+      logged_in: false
+      name: "Fr\xC3\xA9rot Flavien"
+      password: $2b$12$3KIWTPR6Tbu9soPLOjFPaOEk4VY.Rbjg/IrMn0yhATwh8m0DpoGuS
+    hadrien:
+      email: blabla@gmail.com
+      failed_login_attempts: 0
+      logged_in: true
+      name: The Cowbow
+      password: $2b$12$FirdTTgea3p1XkG3NBBUdOK4svk2qTyQFQQrdIkNPZrXBfI.Qy1Zi
+pre-authorized:
+  emails:
+  - melsby@gmail.com
