@@ -161,7 +161,6 @@ streamlit-pandas-profiling==0.1.3
 streamlit-player==0.1.5
 streamlit-quill==0.0.3
 ta==0.10.2
-TA-Lib @ file:///C:/Users/Hadrien%20Perso/Nextcloud/Documents/Travail/Scripts/bot/TA_Lib-0.4.24-cp39-cp39-win_amd64.whl
 tangled-up-in-unicode==0.2.0
 tenacity==8.4.2
 terminado==0.15.0
