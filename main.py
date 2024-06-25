@@ -75,7 +75,7 @@ if st.session_state["authentication_status"]:
         #for now I remove multiseleect
         selected_categories = list(categories.keys())
 
-        one_week_ago = datetime.now() - timedelta(days=date.today().weekday())#datetime.timedelta(days=7)
+        one_week_ago = datetime.now() - timedelta(days=date.today().weekday()+1)
         df['timestamp'] = pd.to_datetime(df['timestamp'])
         df_week = df[df['timestamp'] >= one_week_ago]
 
@@ -88,9 +88,15 @@ if st.session_state["authentication_status"]:
                 data = user_data[user_data['category'].isin(selected_categories)]
                 if not data.empty:
                     summed_data = data.groupby('timestamp')['increment'].sum().cumsum()
+                    summed_data[one_week_ago] = 0
+                    summed_data.sort_index(inplace=True,ascending=True)
+                    summed_data[datetime.now()] = summed_data[-1]
+
+                    print(summed_data)
                     fig.add_trace(go.Scatter(
                         x=summed_data.index,
                         y=summed_data.values,
+                        line_shape='hv',
                         mode='lines',
                         name=f"{user}"
                     ))
